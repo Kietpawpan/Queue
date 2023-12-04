@@ -15,7 +15,7 @@ body
 {
     width:250px;
     margin: 20px auto;
-    border: 3px solid #e84444;
+    border: 3px solid green; // #e84444;
     position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -39,10 +39,10 @@ body
     text-align: center;
     padding-left: 1px;
     padding-right: 1px;
-    line-height: 2px;
+    line-height: 0px;
     color: #666;
     transition: all 0.5s linear;
-    font-size:100px;
+    font-size:120px;
 }
 
 .card:hover p
@@ -78,6 +78,7 @@ $lines = count(file($filePath));
 
 
 <div class="card">
+<img src="mnre.png" style='width:50px;height:55px;padding-left: 10px'></img>
   <h3>คิวที่</h3>
   <p id='q'><?php echo $lines ?>
 </p>
@@ -110,6 +111,7 @@ style='text-align:center;
 </div>
 <div class="button">
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<!--
   	<input type="submit" name="update" value="สร้างบัตรคิว" 
 		style="width:100px;
 			background-color:DodgerBlue;	
@@ -119,6 +121,7 @@ style='text-align:center;
 			padding: 12px 16px;
 			font-size: 16px;"
 	><br><br>
+	-->
 	<a id="download" href="#">บันทึกบัตรคิว</a>
 
 </form>
