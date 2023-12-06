@@ -74,6 +74,9 @@ body
 <?php
 $filePath = "qDat.txt"; 
 $lines = count(file($filePath));  
+$fileServe = "qServe.txt";
+$slines = count(file($fileServe));
+$wait = $lines - $slines;
 ?>
 
 
@@ -93,10 +96,10 @@ style='text-align:center;
     color: #666;
     transition: all 0.5s linear;
     font-size:20px;'
-></p>
+>รออีก <?php echo $wait ?> คิว</p>
 
 
-<br>ศูนย์ราชการะสะดวก สป.ทส.<br>
+<br>ศูนย์ราชการสะดวก สป.ทส.<br>
 <p id='date'
 style='text-align:center;
     padding-left: 1px;
@@ -162,17 +165,11 @@ html2canvas(document.querySelector(".card")).then((canvas) => {
 
 <!UPDATE THE DATABASE>
 <?php
-if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['update'])){
 $data='1'.PHP_EOL;
-$message = "ERROR 001: Incomplete data!";
-if($data==''){echo "<script type='text/javascript'>alert('$message');</script>";}
-	else{
 	$filecontent=file_get_contents('qDat.txt');
 	$pos=strpos($filecontent, $data) -0;
 	$filecontent=substr($filecontent, 0, $pos)."\r\n".$data;
 	file_put_contents("qDat.txt", $filecontent);	
-	}
-}
 ?>
 
 </html>
