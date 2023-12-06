@@ -79,15 +79,21 @@ $slines = count(file($fileServe));
 $wait = $lines - $slines;
 ?>
 
-
+<!SHOW THE QUEUE CARD>
 <div class="card">
+
+<!SHOW THE MNRE LOGO ON THE TOP LEFT CORNER>
 <img src="mnre.png" style='width:50px;height:55px;padding-left: 10px'></img>
   <h3>คิวที่</h3>
+	
+<!SHOW THE QUEUE NUMBER, EQUAL TO THE NUMBER OF LINES IN THE QUEUE DATA FILE>	
   <p id='q'><?php echo $lines ?>
+
 </p>
 
 <center>
 
+<!SHOW THE WAITING QUEUE>
 <p id='w'
 style='text-align:center;
     padding-left: 1px;
